@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:41:59 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/08 20:56:06 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:04:36 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ int	main(int argc, char **argv)
 	t_list	*temp;
 	int		i;
 
-	//t_list  *b;
 	a = NULL;
-	//b = NULL;
 	if (argc < 2)
 		return (0);
 	i = 1;
