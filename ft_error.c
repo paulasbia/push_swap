@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/08 19:26:13 by pde-souz         ###   ########.fr       */
+/*   Created: 2023/05/08 18:59:13 by pde-souz          #+#    #+#             */
+/*   Updated: 2023/05/08 19:25:55 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
+int ft_error(char *argv, t_list *temp)
+{
+    char    *s1;
+    char    *s2;
+    int     len;
 
-int     main(int argc, char **argv);
-int     get_content(t_list *elem);
-t_list  *my_ft_lstnew(char *content);
-int ft_error(char *argv, t_list *temp);
-
-#endif
+    s1 = argv;
+    s2 = ft_itoa(get_content(temp));
+    len = ft_strlen(argv);
+    if (ft_strncmp(s1, s2, len) != 0)
+    {
+        return (1);
+    }
+    return (0);    
+}

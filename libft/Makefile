@@ -6,7 +6,7 @@
 #    By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:48:30 by paula             #+#    #+#              #
-#    Updated: 2023/05/08 16:30:06 by pde-souz         ###   ########.fr        #
+#    Updated: 2023/05/08 17:24:01 by pde-souz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,8 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-bonus: $(OBJS_B)
-	ar -crs $(NAME) $(OBJS_B)
-
-$(NAME): $(OBJS)
-	ar -crs $(NAME) $(OBJS) 
+$(NAME): $(OBJS) $(OBJS_B)
+	ar -crs $(NAME) $(OBJS) $(OBJS_B)
 
 clean:
 	rm -f $(OBJS) $(OBJS_B)
