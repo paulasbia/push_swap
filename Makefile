@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS =  test.c
+SRCS =  push_swap.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -14,7 +14,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(LIBFTA) $(OBJS)
-	cc $(FLAGS) $(LIBFTA) $(OBJS) -o $(NAME) 
+	cc $(FLAGS) $(OBJS) $(LIBFTA) -o $(NAME) 
 
 $(LIBFTA):
 	make -C libft

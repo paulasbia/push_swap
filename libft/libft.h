@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pde-souz < pde-souz@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 14:05:20 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/12 15:21:24 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:32:04 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -71,5 +72,15 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+void	ft_putchar_pf_fd(char c, int fd, long int *ret);
+void	replace(char st, va_list ap, long int *ret);
+int		ft_printf(const char *st, ...);
+void	ft_putstr_pf_fd(char *s, int fd, long int *ret);
+void	ft_hexanbr_fd(unsigned int n, int fd, int x, long int *ret);
+void	ft_print_pf(int n, int fd, long int *ret);
+void	ft_putnbr_pf_fd(int n, int fd, long int *ret);
+void	ft_uniprint(unsigned int n, int fd, long int *ret);
+void	ft_adressp(unsigned long int n, int fd, long int *ret);
 
 #endif

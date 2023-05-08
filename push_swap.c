@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:41:59 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/08 14:55:11 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:33:56 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main (int argc, char **argv)
 {
-    t_list  *a;
-    t_list  *b;
+    // t_list  *a;
+    // t_list  *b;
     int     i;
     
     if (argc < 2)
@@ -23,7 +23,7 @@ int main (int argc, char **argv)
     i = 0;
     while (i < argc)
     {
-        printf("%s\n", argv[i]);
+        ft_printf("%s\n", argv[i]);
         i++;
     }
     return (0);
