@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS =  push_swap.c  ft_error.c 
+SRCS =  push_swap.c  ft_error.c swap.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -27,10 +27,10 @@ install:
 check:
 	norminette $(SRCS)
 
-test: all
-	gcc -ggdb $(FLAGS) ft_printf.c $(NAME) -o result.out
+test: $(LIBFTA)
+	gcc -ggdb $(FLAGS) tests/test.c swap.c tests/unity.c $(LIBFTA) -o result.out
 
-run: clean fclean
+run: clean fclean test
 	./result.out
 
 clean:

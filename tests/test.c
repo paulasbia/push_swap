@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <bsd/string.h>
 #include "unity.h"
+#include "../push_swap.h"
 
 
 void setUp(void) {
@@ -15,31 +16,24 @@ void tearDown(void) {
     // clean stuff up here
 }
 
-struct params {
-    int x;
-    int y;
-    int result;
-    int sub;
-};
+static void test_swap(void)
+{
+    t_list  *lst;//lst = NULL
 
-void soma(struct params *p){
-    p->result = p->x + p->y;
-    p->sub = p->x - p->y;
-}
-
-void usa_soma(){
-    struct params p;
-    p.x = 1;
-    p.y = 2;
-    soma(&p);
-    TEST_ASSERT_EQUAL_INT32(3, p.result);
-    TEST_ASSERT_EQUAL_INT32(-1, p.sub);
+    lst = NULL;
+    ft_lstadd_back(&lst, ft_lstnew("a")); // lst = a
+    ft_lstadd_back(&lst, ft_lstnew("b"));// lst = a -> b
+    ft_lstadd_back(&lst, ft_lstnew("c")); // lst = a -> b -> c
+    swap_a(&lst);
+    TEST_ASSERT_EQUAL_STRING("b", lst->content);
+    TEST_ASSERT_EQUAL_STRING("a", lst->next->content);
+    TEST_ASSERT_EQUAL_STRING("c", lst->next->next->content);
 }
 
 // not needed when using generate_test_runner.rb
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(usa_soma);
+    RUN_TEST(test_swap);
     return UNITY_END();
 }
 
