@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:01:54 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/08 16:27:03 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/08 19:51:01 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	replace(char st, va_list ap, long int *ret)
 		ft_hexanbr_fd(va_arg(ap, int), 1, 1, ret);
 	if (st == 'X')
 		ft_hexanbr_fd(va_arg(ap, int), 1, 2, ret);
-    if (st == 'p')
+	if (st == 'p')
 	{
 		arg = va_arg(ap, unsigned long int);
 		if (arg != 0)
@@ -56,7 +56,7 @@ void	replace(char st, va_list ap, long int *ret)
 			ft_putstr_pf_fd("0x", 1, ret);
 		}
 		ft_adressp(arg, 1, ret);
-	}    
+	}
 }
 
 int	ft_printf(const char *st, ...)
