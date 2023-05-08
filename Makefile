@@ -1,8 +1,10 @@
-NAME = test.out
+NAME = push_swap
 
 SRCS =  test.c
 
 OBJS = $(SRCS:.c=.o)
+
+LIBFTA = ./libft/libft.a
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -11,8 +13,11 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	cc $(FLAGS) $(OBJS) -o $(NAME) 
+$(NAME): $(LIBFTA) $(OBJS)
+	cc $(FLAGS) $(LIBFTA) $(OBJS) -o $(NAME) 
+
+$(LIBFTA):
+	make -C libft
 
 install:
 	python3 -m pip install --upgrade pip setuptools
@@ -33,6 +38,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	make -C libft fclean
 
 re: fclean all
 
