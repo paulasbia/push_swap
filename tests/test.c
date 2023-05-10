@@ -24,7 +24,7 @@ static void test_swap(void)
     ft_lstadd_back(&lst, ft_lstnew("a")); // lst = a
     ft_lstadd_back(&lst, ft_lstnew("b"));// lst = a -> b
     ft_lstadd_back(&lst, ft_lstnew("c")); // lst = a -> b -> c
-    swap_a(&lst);
+    swap(&lst, 'b');
     TEST_ASSERT_EQUAL_STRING("b", lst->content);
     TEST_ASSERT_EQUAL_STRING("a", lst->next->content);
     TEST_ASSERT_EQUAL_STRING("c", lst->next->next->content);

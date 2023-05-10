@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS =  push_swap.c  ft_error.c swap.c
+SRCS =  push_swap.c  ft_error.c moves.c
 
 OBJS = $(SRCS:.c=.o)
 
