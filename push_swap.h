@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/11 10:50:55 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/11 11:51:32 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ void    push_b(t_list **b, t_list **a);
 void	rotate_a(t_list **a);
 void	rotate_b(t_list **b);
 void	rotate_rr(t_list **a, t_list **b);
+void	rev_rot_b(t_list **b);
+void	rev_rot_a(t_list **a);
 
 #endif

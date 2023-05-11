@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS =  push_swap.c  ft_error.c swap.c push.c rotate.c
+SRCS =  push_swap.c  ft_error.c swap.c push.c rotate.c rev_rotate.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -28,7 +28,7 @@ check:
 	norminette $(SRCS)
 
 test: $(LIBFTA)
-	gcc -ggdb $(FLAGS) tests/test.c swap.c push.c rotate.c tests/unity.c $(LIBFTA) -o result.out
+	gcc -ggdb $(FLAGS) tests/test.c swap.c push.c rotate.c rev_rotate.c tests/unity.c $(LIBFTA) -o result.out
 
 run: clean fclean test
 	./result.out
