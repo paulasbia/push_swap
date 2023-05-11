@@ -28,7 +28,7 @@ check:
 	norminette $(SRCS)
 
 test: $(LIBFTA)
-	gcc -ggdb $(FLAGS) tests/test.c swap.c tests/unity.c $(LIBFTA) -o result.out
+	gcc -ggdb $(FLAGS) tests/test.c swap.c push.c tests/unity.c $(LIBFTA) -o result.out
 
 run: clean fclean test
 	./result.out
