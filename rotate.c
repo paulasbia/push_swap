@@ -1,44 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 21:40:54 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/11 10:45:59 by pde-souz         ###   ########.fr       */
+/*   Created: 2023/05/11 10:08:03 by pde-souz          #+#    #+#             */
+/*   Updated: 2023/05/11 10:45:21 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_list **lst)
+static void	rotate(t_list **list)
 {
 	t_list	*temp;
+	t_list	*first;
 
-	if (*lst == NULL || (*lst)->next == NULL)
+	if (list == NULL || (*list)->next == NULL)
 		return ;
-	temp = *lst;
-	*lst = (*lst)->next;
-	temp->next = temp->next->next;
-	(*lst)->next = temp;
+	first = *list;
+	temp = ft_lstlast(list);
+	temp->next = first;
+	*list = (*list)->next;
+	first->next = NULL;
 }
 
-void	swap_a(t_list **a)
+void	rotate_a(t_list **a)
 {
-	ft_printf("sa\n");
-	swap(a);
+	ft_printf("ra\n");
+	rotate(a);
 }
 
-void	swap_b(t_list **b)
+void	rotate_b(t_list **b)
 {
-	ft_printf("sb\n");
-	swap(b);
+	ft_printf("rb\n");
+	rotate(b);
 }
 
-void	swap_ss(t_list **a, t_list **b)
+void	rotate_rr(t_list **a, t_list **b)
 {
-	ft_printf("ss\n");
-	swap(a);
-	swap(b);
+	ft_printf("rr\n");
+	rotate(a);
+    rotate(b);
 }
