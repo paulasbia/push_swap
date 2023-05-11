@@ -91,6 +91,20 @@ static void test_rotate(void)
     TEST_ASSERT_EQUAL_STRING("d", lstb->next->next->content);
 }
 
+static void test_rotate_inval(void)
+{
+    t_list  *lsta;
+    t_list  *lstb;
+
+    lsta = NULL;
+    lstb = NULL;
+    ft_lstadd_back(&lsta, ft_lstnew("a"));
+    rotate_a(&lsta);
+    TEST_ASSERT_EQUAL_STRING("a", lsta->content);
+    rotate_b(&lstb);
+    TEST_ASSERT_EQUAL(NULL, lstb);
+}
+
 static void test_rotate_rr(void)
 {
     t_list  *lsta;
@@ -120,6 +134,7 @@ int main(void) {
     RUN_TEST(test_push_a);
     RUN_TEST(test_push_b);
     RUN_TEST(test_rotate);
+    RUN_TEST(test_rotate_inval);
     RUN_TEST(test_rotate_rr);
     return UNITY_END();
 }
