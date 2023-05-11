@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/10 17:38:15 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/10 15:47:57 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ t_list	*my_ft_lstnew(char *content);
 int		ft_error(char *argv, t_list *temp);
 int		ft_duplicate(t_list *lst, int n);
 void	swap(t_list **lst, char type);
-void	push(t_list **list_1, t_list **list_2, char type);
 
 #endif
