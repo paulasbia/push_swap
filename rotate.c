@@ -6,24 +6,36 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 10:08:03 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/11 11:35:55 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/11 13:12:59 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+t_list  *ft_remove_front(t_list **list)
+{
+    t_list  *first_node;
+
+    first_node = *list;
+    if (*list == NULL)
+        return (NULL);
+    if (first_node->next == NULL)
+    {
+        *list = NULL;
+        return (first_node);
+    }   
+	*list = (*list)->next;
+    return (first_node);
+}
+
 static void	rotate(t_list **list)
 {
-	t_list	*temp;
 	t_list	*first;
 
 	if (*list == NULL || (*list)->next == NULL)
 		return ;
-	first = *list;
-	temp = ft_lstlast(*list);
-	temp->next = first;
-	*list = (*list)->next;
-	first->next = NULL;
+	first = ft_remove_front(list);
+	ft_lstadd_back(list, first);
 }
 
 void	rotate_a(t_list **a)
