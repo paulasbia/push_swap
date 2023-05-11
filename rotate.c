@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 10:08:03 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/11 10:57:36 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/11 11:07:37 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void	rotate_rr(t_list **a, t_list **b)
 {
 	ft_printf("rr\n");
 	rotate(a);
-    rotate(b);
+	rotate(b);
 }
