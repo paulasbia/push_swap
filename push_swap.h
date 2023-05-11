@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/11 09:42:54 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/11 10:50:55 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ void    swap_b(t_list **b);
 void    swap_ss(t_list **a, t_list **b);
 void    push_a(t_list **a, t_list **b);
 void    push_b(t_list **b, t_list **a);
+void	rotate_a(t_list **a);
+void	rotate_b(t_list **b);
+void	rotate_rr(t_list **a, t_list **b);
 
 #endif

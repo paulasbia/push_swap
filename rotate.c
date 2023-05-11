@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 10:08:03 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/11 10:45:21 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/11 10:57:36 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	rotate(t_list **list)
 	if (list == NULL || (*list)->next == NULL)
 		return ;
 	first = *list;
-	temp = ft_lstlast(list);
+	temp = ft_lstlast(*list);
 	temp->next = first;
 	*list = (*list)->next;
 	first->next = NULL;

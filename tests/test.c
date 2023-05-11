@@ -68,12 +68,59 @@ static void test_push_b(void)
     TEST_ASSERT_EQUAL_STRING("e", lstb->next->next->content);
 }
 
+static void test_rotate(void)
+{
+    t_list  *lsta;
+    t_list  *lstb;
+
+    lsta = NULL;
+    lstb = NULL;
+    ft_lstadd_back(&lsta, ft_lstnew("a")); // lst = a
+    ft_lstadd_back(&lsta, ft_lstnew("b"));// lst = a -> b
+    ft_lstadd_back(&lsta, ft_lstnew("c")); // lst = a -> b -> c
+    ft_lstadd_back(&lstb, ft_lstnew("d")); // lst = a
+    ft_lstadd_back(&lstb, ft_lstnew("e"));// lst = a -> b
+    ft_lstadd_back(&lstb, ft_lstnew("f")); // lst = a -> b -> c
+    rotate_a(&lsta);
+    TEST_ASSERT_EQUAL_STRING("b", lsta->content);
+    TEST_ASSERT_EQUAL_STRING("c", lsta->next->content);
+    TEST_ASSERT_EQUAL_STRING("a", lsta->next->next->content);
+    rotate_b(&lstb);
+    TEST_ASSERT_EQUAL_STRING("e", lstb->content);
+    TEST_ASSERT_EQUAL_STRING("f", lstb->next->content);
+    TEST_ASSERT_EQUAL_STRING("d", lstb->next->next->content);
+}
+
+static void test_rotate_rr(void)
+{
+    t_list  *lsta;
+    t_list  *lstb;
+
+    lsta = NULL;
+    lstb = NULL;
+    ft_lstadd_back(&lsta, ft_lstnew("a")); // lst = a
+    ft_lstadd_back(&lsta, ft_lstnew("b"));// lst = a -> b
+    ft_lstadd_back(&lsta, ft_lstnew("c")); // lst = a -> b -> c
+    ft_lstadd_back(&lstb, ft_lstnew("d")); // lst = a
+    ft_lstadd_back(&lstb, ft_lstnew("e"));// lst = a -> b
+    ft_lstadd_back(&lstb, ft_lstnew("f")); // lst = a -> b -> c
+    rotate_rr(&lsta, &lstb);
+    TEST_ASSERT_EQUAL_STRING("b", lsta->content);
+    TEST_ASSERT_EQUAL_STRING("c", lsta->next->content);
+    TEST_ASSERT_EQUAL_STRING("a", lsta->next->next->content);
+    TEST_ASSERT_EQUAL_STRING("e", lstb->content);
+    TEST_ASSERT_EQUAL_STRING("f", lstb->next->content);
+    TEST_ASSERT_EQUAL_STRING("d", lstb->next->next->content);
+}
+
 // not needed when using generate_test_runner.rb
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_swap);
     RUN_TEST(test_push_a);
     RUN_TEST(test_push_b);
+    RUN_TEST(test_rotate);
+    RUN_TEST(test_rotate_rr);
     return UNITY_END();
 }
 
