@@ -46,4 +46,8 @@ valgrind: clean fclean all
 	rm -f $(OBJS) $(NAME)
 	valgrind --leak-check=full ./result.out
 
+test_ex:
+	./push_swap 8 2 7 1 6 4 5 3
+	./push_swap 2 4 5 3 1
+
 .PHONY: clean fclean all re

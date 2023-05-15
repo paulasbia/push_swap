@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/15 13:21:03 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:48:24 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	print_list(t_list *a);
 void    sort(t_list **a, t_list **b);
 void    rule_3(t_list **a);
 void    rule_5(t_list **a, t_list **b);
+void	sort_a(t_list **a, t_list **b);
 
 #endif
