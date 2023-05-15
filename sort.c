@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/15 13:47:58 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:19:30 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,17 @@ void	rule_3(t_list **a)
 
 void    rule_5(t_list **a, t_list **b)
 {
-    while (ft_lstsize(*a) > 3)
+    int	size;
+	int	count;
+
+	count = 0;
+	size = ft_lstsize(*a);
+	while (ft_lstsize(*a) > 3)
     {
-        if (get_content(*a) > get_content((*a)->next))
+        if (get_content(*a) > get_content((*a)->next) && count++ < (size - 2))
         	rotate_a(a);
-    	else if (get_content(*a) < get_content((*a)->next))
-    	{
+    	else
         	push_b(b, a);
-    	}
     }
     rule_3(a);
 	while ((*b) != NULL)
