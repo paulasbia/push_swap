@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:41:59 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/15 10:57:05 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/15 13:19:16 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ void	print_list(t_list *a)
 int	main(int argc, char **argv)
 {
 	t_list	*a;
+	t_list	*b;
 	t_list	*temp;
 	int		i;
 
 	a = NULL;
+	b = NULL;
 	if (argc < 2)
 		return (0);
 	i = 1;
@@ -60,7 +62,7 @@ int	main(int argc, char **argv)
 		ft_lstadd_back(&a, temp);
 		i++;
 	}
-	sort(&a);
+	sort(&a, &b);
 	print_list(a);
 	return (0);
 }
