@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 10:08:03 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/11 13:14:20 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:37:01 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static void	rotate(t_list **list)
 		return ;
 	first = ft_remove_front(list);
 	ft_lstadd_back(list, first);
+	first->next = NULL;
 }
 
 void	rotate_a(t_list **a)

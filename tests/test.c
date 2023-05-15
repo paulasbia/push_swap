@@ -85,6 +85,7 @@ static void test_rotate(void)
     TEST_ASSERT_EQUAL_STRING("b", lsta->content);
     TEST_ASSERT_EQUAL_STRING("c", lsta->next->content);
     TEST_ASSERT_EQUAL_STRING("a", lsta->next->next->content);
+    TEST_ASSERT_EQUAL(NULL, lsta->next->next->next);
     rotate_b(&lstb);
     TEST_ASSERT_EQUAL_STRING("e", lstb->content);
     TEST_ASSERT_EQUAL_STRING("f", lstb->next->content);
