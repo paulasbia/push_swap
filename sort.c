@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/16 13:28:47 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:57:11 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ void	sort_a(t_list **a, t_list **b)
 	int		qts_maiores;
 	int		n_rotate;
 
-	// printf("stack a: \n");
-	// print_list(*a);
-	// printf("stack b: \n");
-	// print_list(*b);
+	printf("stack a: \n");
+	print_list(*a);
+	printf("stack b: \n");
+	print_list(*b);
 	while ((*b) != 0)
 	{
 		size_a = ft_lstsize(*a);
@@ -77,7 +77,7 @@ void	sort_a(t_list **a, t_list **b)
 		while (temp_a != NULL && get_content(temp_a) < temp_b)
 			temp_a = temp_a->next;
 		qts_maiores = ft_lstsize(temp_a);
-		//printf("qts_maiores = %d\n", qts_maiores);
+		printf("qts_maiores = %d\n", qts_maiores);
 		if (qts_maiores > size_a / 2)
 			n_rotate = size_a - qts_maiores;
 		else
@@ -85,12 +85,17 @@ void	sort_a(t_list **a, t_list **b)
 		while (n_rotate != 0)
 		{
 			if (size_a - qts_maiores <= (size_a) / 2)
+			{
+				if (size_a - qts_maiores == (size_a) / 2)
+					n_rotate--;
 				rotate_a(a);
+			}
 			else
 				rev_rot_a(a);
 			n_rotate--;
 		}
 		push_a(a, b);
+		printf("o size_a vale %f\n", size_a);
 		if (qts_maiores >= size_a / 2)
 			n_rotate = size_a - qts_maiores;
 		else
@@ -98,14 +103,21 @@ void	sort_a(t_list **a, t_list **b)
 		while (n_rotate != 0)
 		{
 			if (size_a - qts_maiores <= (size_a) / 2)
+			{
+				if (size_a - qts_maiores == (size_a) / 2)
+				{
+					swap_a(a);
+					n_rotate--;
+				}
 				rev_rot_a(a);
+			}
 			else
 				rotate_a(a);
 			n_rotate--;
 		}
-	// printf("====================\nstack a: \n");
-	// print_list(*a);
-	// printf("====================\nstack b: \n");
-	// print_list(*b);
+	printf("====================\nstack a: \n");
+	print_list(*a);
+	printf("====================\nstack b: \n");
+	print_list(*b);
 	}
 }
