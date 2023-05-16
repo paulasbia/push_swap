@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/16 13:57:11 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:59:11 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	sort_a(t_list **a, t_list **b)
 	double	size_a;
 	int		qts_maiores;
 	int		n_rotate;
+	int		signal;
 
 	printf("stack a: \n");
 	print_list(*a);
@@ -80,34 +81,35 @@ void	sort_a(t_list **a, t_list **b)
 		printf("qts_maiores = %d\n", qts_maiores);
 		if (qts_maiores > size_a / 2)
 			n_rotate = size_a - qts_maiores;
+		else if (qts_maiores == size_a / 2)
+			n_rotate = qts_maiores - 1;
 		else
 			n_rotate = qts_maiores;
 		while (n_rotate != 0)
 		{
 			if (size_a - qts_maiores <= (size_a) / 2)
-			{
-				if (size_a - qts_maiores == (size_a) / 2)
-					n_rotate--;
 				rotate_a(a);
-			}
 			else
 				rev_rot_a(a);
 			n_rotate--;
 		}
 		push_a(a, b);
 		printf("o size_a vale %f\n", size_a);
-		if (qts_maiores >= size_a / 2)
+		if (qts_maiores > size_a / 2)
 			n_rotate = size_a - qts_maiores;
+		else if (qts_maiores == size_a / 2)
+			n_rotate = size_a - qts_maiores - 1;
 		else
 			n_rotate = qts_maiores + 1;
+		signal = 0;
 		while (n_rotate != 0)
 		{
 			if (size_a - qts_maiores <= (size_a) / 2)
 			{
-				if (size_a - qts_maiores == (size_a) / 2)
-				{
+				if (size_a - qts_maiores == (size_a) / 2 && signal == 0)
+				{	
 					swap_a(a);
-					n_rotate--;
+					signal = 1;
 				}
 				rev_rot_a(a);
 			}
