@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:41:59 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/15 13:19:16 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/16 10:38:02 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	sort(&a, &b);
-	print_list(a);
+//	print_list(a);
 	return (0);
 }
