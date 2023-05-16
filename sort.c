@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/16 12:48:39 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:28:47 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,20 +77,15 @@ void	sort_a(t_list **a, t_list **b)
 		while (temp_a != NULL && get_content(temp_a) < temp_b)
 			temp_a = temp_a->next;
 		qts_maiores = ft_lstsize(temp_a);
-	//	printf("qts_maiores = %d\n", qts_maiores);
+		//printf("qts_maiores = %d\n", qts_maiores);
 		if (qts_maiores > size_a / 2)
 			n_rotate = size_a - qts_maiores;
 		else
 			n_rotate = qts_maiores;
 		while (n_rotate != 0)
 		{
-			if (size_a - qts_maiores < (size_a) / 2)
+			if (size_a - qts_maiores <= (size_a) / 2)
 				rotate_a(a);
-			else if (size_a - qts_maiores == (size_a) / 2)
-			{
-				rotate_a(a);
-				n_rotate--;
-			}
 			else
 				rev_rot_a(a);
 			n_rotate--;
@@ -102,14 +97,8 @@ void	sort_a(t_list **a, t_list **b)
 			n_rotate = qts_maiores + 1;
 		while (n_rotate != 0)
 		{
-			if (size_a - qts_maiores < (size_a) / 2)
+			if (size_a - qts_maiores <= (size_a) / 2)
 				rev_rot_a(a);
-			else if (size_a - qts_maiores == (size_a) / 2)
-			{
-				swap_a(a);
-				rev_rot_a(a);
-				n_rotate--;
-			}
 			else
 				rotate_a(a);
 			n_rotate--;
