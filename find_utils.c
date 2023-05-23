@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 11:26:37 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 12:06:14 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:43:09 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,33 @@ int ft_find_index(t_list *lst, int nbr)
         i++;
         lst = lst->next;
     }
+    printf("index o i eh %d\n", i);
     return(i);
+}
+
+int ft_find_place_a(t_list *a, int nbr)
+{
+    int     i;
+    t_list  *temp;
+
+    i = 1;
+    if (nbr < get_content(a) && nbr > get_content(ft_lstlast(a)))
+        i = 0;
+    else if (nbr > ft_find_max(a) || nbr < ft_find_min(a))
+    {
+        printf("nbs maior ou menor \n");
+        i = ft_find_index(a, ft_find_min(a));
+    }
+    else
+    {
+        temp = a->next;
+        while (get_content(a) > nbr || get_content(temp) < nbr)
+        {
+            a = a->next;
+            temp = a->next;
+            i++;
+        }
+    }
+    printf("em find place i vale %d\n", i);
+    return (i);
 }

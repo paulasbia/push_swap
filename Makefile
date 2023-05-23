@@ -1,7 +1,7 @@
 NAME = push_swap
 
 SRCS =  push_swap.c ft_error.c check_sorted.c swap.c push.c rotate.c rev_rotate.c ft_sort.c ft_rotate_type.c \
-		cases_utils_ab.c find_utils.c apply_utils.c 
+		cases_utils_ab.c find_utils.c apply_utils.c cases_utils_ba.c 
 
 OBJS = $(SRCS:.c=.o)
 

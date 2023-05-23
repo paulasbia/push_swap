@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 13:21:32 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/23 14:47:25 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,16 @@ int ft_apply_rarb(t_list **a, t_list **b, int nbr, char s);
 int	ft_apply_rrarrb(t_list **a, t_list **b, int nbr, char s);
 int	ft_apply_rrarb(t_list **a, t_list **b, int nbr, char s);
 int	ft_apply_rarrb(t_list **a, t_list**b, int nbr, char s);
+
+t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b);
+int ft_rotate_type_ba(t_list *a, t_list *b);
+
+int	ft_case_rarrb_a(t_list *a, t_list *b, int nbr);
+int	ft_case_rrarb_a(t_list *a, t_list *b, int nbr);
+int	ft_case_rarb_a(t_list *a, t_list *b, int nbr);
+int ft_case_rrarrb_a(t_list *a, t_list *b, int nbr);
+
+int ft_find_place_a(t_list *a, int nbr);
 
 void    rule_3(t_list **a);
 void    rule_5(t_list **a, t_list **b);

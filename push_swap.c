@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:41:59 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 09:51:20 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:07:57 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 	}
 	if (ft_checksorted(a) == 0)
 		ft_sort(&a);
+	print_list(a);
 	ft_lstclear(&a, free);
-//	print_list(a);
 	return (0);
 }
