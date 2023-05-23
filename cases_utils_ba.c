@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:29:43 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 15:14:49 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:00:15 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int ft_case_rrarrb_a(t_list *a, t_list *b, int nbr)
 		i = ft_lstsize(a) - ft_find_place_a(a, nbr);
 	if ((i < (ft_lstsize(b) - ft_find_index(b, nbr))) && ft_find_index(b, nbr))
 		i = ft_lstsize(b) - ft_find_index(b, nbr);
-	printf("rrarrb i vale %d\n", i);
+//	printf("rrarrb i vale %d\n", i);
 	return (i);
 }
 

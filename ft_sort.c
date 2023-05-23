@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 15:35:00 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:01:51 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,54 +43,32 @@ void	ft_sort(t_list **stack_a)
 	}
 }
 
-void	rule_3(t_list **stack_a)
+void	rule_3(t_list **a)
 {
-	if (ft_find_min(*stack_a) == get_content(*stack_a))
+	if (get_content(*a) > get_content((*a)->next))
 	{
-		rev_rot_a(stack_a);
-		swap_a(stack_a);
-	}
-	else if (ft_find_max(*stack_a) == get_content(*stack_a))
-	{
-		rotate_a(stack_a);
-		if (ft_checksorted(*stack_a) == 0)
-			swap_a(stack_a);
-	}
-	else
-	{
-		if (ft_find_index(*stack_a, ft_find_max(*stack_a)) == 1)
-			rev_rot_a(stack_a);
+		if (get_content(*a) < get_content((*a)->next->next))
+			swap_a(a);
+		else if (get_content(*a) > get_content((*a)->next->next)
+			&& get_content((*a)->next) < get_content((*a)->next->next))
+			rotate_a(a);
 		else
-			swap_a(stack_a);
+		{
+			rotate_a(a);
+			swap_a(a);
+		}
+	}
+	else if (get_content(*a) < get_content((*a)->next))
+	{
+		if (get_content(*a) > get_content((*a)->next->next))
+			rev_rot_a(a);
+		else if (get_content((*a)->next) > get_content((*a)->next->next))
+		{
+			swap_a(a);
+			rotate_a(a);
+		}
 	}
 }
-
-// void	rule_3(t_list **a)
-// {
-// 	if (get_content(*a) > get_content((*a)->next))
-// 	{
-// 		if (get_content(*a) < get_content((*a)->next->next))
-// 			swap_a(a);
-// 		else if (get_content(*a) > get_content((*a)->next->next)
-// 			&& get_content((*a)->next) < get_content((*a)->next->next))
-// 			rotate_a(a);
-// 		else
-// 		{
-// 			rotate_a(a);
-// 			swap_a(a);
-// 		}
-// 	}
-// 	else if (get_content(*a) < get_content((*a)->next))
-// 	{
-// 		if (get_content(*a) > get_content((*a)->next->next))
-// 			rev_rot_a(a);
-// 		else if (get_content((*a)->next) > get_content((*a)->next->next))
-// 		{
-// 			swap_a(a);
-// 			rotate_a(a);
-// 		}
-// 	}
-// }
 
 t_list	*ft_sort_b(t_list **stack_a)
 {
