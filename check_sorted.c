@@ -1,50 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   check_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 18:59:13 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 09:34:00 by pde-souz         ###   ########.fr       */
+/*   Created: 2023/05/23 09:40:41 by pde-souz          #+#    #+#             */
+/*   Updated: 2023/05/23 09:46:43 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_duplicate(t_list *lst, int n)
+// This function checks if the stack is sorted.
+int	ft_checksorted(t_list *stack_a)
 {
-	while (lst)
+	int	i;
+
+	i = get_content(stack_a);
+	while (stack_a != 0)
 	{
-		if (get_content(lst) != n)
-			lst = lst->next;
-		else
-		{
-			return (1);
-			break ;
-		}
+		if (i > get_content(stack_a))
+			return (0);
+		i = get_content(stack_a);
+		stack_a = stack_a->next;
 	}
-	return (0);
-}
-
-int	ft_check_error(char *argv, t_list *temp)
-{
-	char	*s1;
-	char	*s2;
-	int		len;
-
-	s1 = argv;
-	s2 = ft_itoa(get_content(temp));
-	len = ft_strlen(argv);
-	if (ft_strncmp(s1, s2, len) != 0)
-	{
-		return (1);
-	}
-	return (0);
-}
-
-void	ft_error(void)
-{	
-	write (2, "Error\n", 6);
-	exit(1);
+	return (1);
 }

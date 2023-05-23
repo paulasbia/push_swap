@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/15 15:48:24 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/23 11:16:32 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@
 
 int		get_content(t_list *elem);
 t_list	*my_ft_lstnew(char *content);
-int		ft_error(char *argv, t_list *temp);
+int		ft_check_error(char *argv, t_list *temp);
+void	ft_error(void);
 int		ft_duplicate(t_list *lst, int n);
+int	ft_checksorted(t_list *stack_a);
 void    swap_a(t_list **a);
 void    swap_b(t_list **b);
 void    swap_ss(t_list **a, t_list **b);
@@ -37,7 +39,11 @@ void	rev_rot_ab(t_list **a, t_list **b);
 t_list  *ft_remove_back(t_list **list);
 t_list  *ft_remove_front(t_list **list);
 void	print_list(t_list *a);
-void    sort(t_list **a, t_list **b);
+void    ft_sort(t_list **a);
+t_list	*ft_sort_b(t_list **stack_a);
+void	ft_sort_b_till_3(t_list **stack_a, t_list **stack_b);
+int ft_rotate_type_ab(t_list *a, t_list *b);
+
 void    rule_3(t_list **a);
 void    rule_5(t_list **a, t_list **b);
 void	sort_a(t_list **a, t_list **b);

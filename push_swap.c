@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:41:59 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/16 10:38:02 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/23 09:51:20 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,28 +41,27 @@ void	print_list(t_list *a)
 int	main(int argc, char **argv)
 {
 	t_list	*a;
-	t_list	*b;
 	t_list	*temp;
 	int		i;
 
 	a = NULL;
-	b = NULL;
 	if (argc < 2)
-		return (0);
+		ft_error();
 	i = 1;
 	while (i < argc)
 	{
 		temp = my_ft_lstnew(argv[i]);
-		if (ft_error(argv[i], temp) != 0 || ft_duplicate(a, ft_atoi(argv[i])))
+		if (ft_check_error(argv[i], temp) != 0 || ft_duplicate(a, ft_atoi(argv[i])))
 		{
-			ft_printf("Error\n");
-			ft_lstclear(&a, free);
-			break ;
+			ft_error();
+			ft_lstclear(&temp, free);
 		}
 		ft_lstadd_back(&a, temp);
 		i++;
 	}
-	sort(&a, &b);
+	if (ft_checksorted(a) == 0)
+		ft_sort(&a);
+	ft_lstclear(&a, free);
 //	print_list(a);
 	return (0);
 }
