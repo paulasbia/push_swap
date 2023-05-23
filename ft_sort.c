@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 10:32:44 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:57:33 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_sort(t_list **stack_a)
 	{
         // rule_5(stack_a, stack_b);
 		stack_b = ft_sort_b(stack_a);
+		print_list(stack_b);
 	//	stack_a = ft_sort_a(stack_a, stack_b);
 	}
 }
@@ -85,15 +86,15 @@ void	ft_sort_b_till_3(t_list **stack_a, t_list **stack_b)
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			// if (i == ft_case_rarb(*stack_a, *stack_b, get_content(temp)))
-			// 	i = ft_apply_rarb(stack_a, stack_b, get_content(temp), 'a');
-			// else if (i == ft_case_rrarrb(*stack_a, *stack_b, get_content(temp)))
-			// 	i = ft_apply_rrarrb(stack_a, stack_b, get_content(temp), 'a');
-			// else if (i == ft_case_rarrb(*stack_a, *stack_b, get_content(temp)))
-			// 	i = ft_apply_rarrb(stack_a, stack_b, get_content(temp), 'a');
-			// else if (i == ft_case_rrarb(*stack_a, *stack_b, get_content(temp)))
-			// 	i = ft_apply_rrarb(stack_a, stack_b, get_content(temp), 'a');
-			// else
+			if (i == ft_case_rarb(*stack_a, *stack_b, get_content(temp)))
+				i = ft_apply_rarb(stack_a, stack_b, get_content(temp), 'a');
+			else if (i == ft_case_rrarrb(*stack_a, *stack_b, get_content(temp)))
+				i = ft_apply_rrarrb(stack_a, stack_b, get_content(temp), 'a');
+			else if (i == ft_case_rarrb(*stack_a, *stack_b, get_content(temp)))
+				i = ft_apply_rarrb(stack_a, stack_b, get_content(temp), 'a');
+			else if (i == ft_case_rrarb(*stack_a, *stack_b, get_content(temp)))
+				i = ft_apply_rrarb(stack_a, stack_b, get_content(temp), 'a');
+			else
 				temp = temp->next;
 		}
 	}

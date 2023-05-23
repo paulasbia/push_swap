@@ -1,12 +1,13 @@
 NAME = push_swap
 
-SRCS =  push_swap.c ft_error.c check_sorted.c swap.c push.c rotate.c rev_rotate.c ft_sort.c ft_rotate_type.c 
+SRCS =  push_swap.c ft_error.c check_sorted.c swap.c push.c rotate.c rev_rotate.c ft_sort.c ft_rotate_type.c \
+		cases_utils_ab.c find_utils.c apply_utils.c 
 
 OBJS = $(SRCS:.c=.o)
 
 LIBFTA = ./libft/libft.a
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS =
 
 %.o: %.c
 	cc $(FLAGS) -c $< -o $@
