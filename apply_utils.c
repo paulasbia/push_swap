@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 12:58:22 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 14:51:53 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:37:01 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int ft_apply_rarb(t_list **a, t_list **b, int nbr, char s)
     if (s == 'a')
     {
         while (get_content(*a) != nbr && ft_find_place_b(*b, nbr) > 0)
-            rev_rot_ab(a, b);
+            rotate_rr(a, b);
         while (get_content(*a) != nbr)
             rotate_a(a);
         while (ft_find_place_b(*b, nbr) > 0)
@@ -27,7 +27,7 @@ int ft_apply_rarb(t_list **a, t_list **b, int nbr, char s)
     else
     {
         while (get_content(*b) != nbr && ft_find_place_a(*a, nbr) > 0)
-            rev_rot_ab(a, b);
+            rotate_rr(a, b);
         while (get_content(*b) != nbr)
             rotate_b(b);
         while (ft_find_place_a(*a, nbr) > 0)

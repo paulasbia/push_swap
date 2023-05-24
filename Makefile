@@ -26,7 +26,7 @@ install:
 	sudo apt install valgrind -y
 
 check:
-	norminette $(SRCS)
+	python3 -m norminette $(SRCS)
 
 test: $(LIBFTA)
 	gcc -ggdb $(FLAGS) tests/test.c swap.c push.c rotate.c rev_rotate.c tests/unity.c $(LIBFTA) -o result.out
@@ -44,8 +44,8 @@ fclean: clean
 re: fclean all
 
 valgrind: clean fclean all
+	valgrind --leak-check=full ./push_swap
 	rm -f $(OBJS) $(NAME)
-	valgrind --leak-check=full ./result.out
 
 test_ex:
 	./push_swap 8 2 7 1 6 4 5 3

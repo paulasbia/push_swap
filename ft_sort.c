@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 16:01:51 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:16:55 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	ft_sort(t_list **stack_a)
 	{
         // rule_5(stack_a, stack_b);
 		stack_b = ft_sort_b(stack_a);
-		printf("stack_b completa\n");
-		print_list(stack_b);
+	//	printf("stack_b completa\n");
+		//print_list(stack_b);
 		stack_a = ft_sort_a(stack_a, &stack_b);
 		i = ft_find_index(*stack_a, ft_find_min(*stack_a));
 		if (i < ft_lstsize(*stack_a) - i)
@@ -91,11 +91,13 @@ void	ft_sort_b_till_3(t_list **stack_a, t_list **stack_b)
 {
 	int		i;
 	t_list	*temp;
+//	printf("entrou\n");
 
 	while (ft_lstsize(*stack_a) > 3 && ft_checksorted(*stack_a) == 0)
 	{
 		temp = *stack_a;
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
+		//printf("sorb_3 i eh %d\n", i);
 		while (i >= 0)
 		{
 			if (i == ft_case_rarb(*stack_a, *stack_b, get_content(temp)))
@@ -121,7 +123,7 @@ t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b)
 	{
 		temp = *stack_b;
 		i = ft_rotate_type_ba(*stack_a, *stack_b);
-		printf("i agira vale:%d\n", i);
+	//	printf("i agira vale:%d\n", i);
 		while (i >= 0)
 		{
 			if (i == ft_case_rarb_a(*stack_a, *stack_b, get_content(temp)))
