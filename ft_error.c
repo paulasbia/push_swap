@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:59:13 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/23 09:34:00 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/25 10:04:44 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_check_error(char *argv, t_list *temp)
 }
 
 void	ft_error(void)
-{	
-	write (2, "Error\n", 6);
+{
+	write(2, "Error\n", 6);
 	exit(1);
 }

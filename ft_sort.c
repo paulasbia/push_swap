@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/24 15:16:55 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/25 10:07:02 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,9 @@ void	ft_sort(t_list **stack_a)
 		swap_a(stack_a);
 	if (ft_lstsize(*stack_a) == 3)
 		rule_3(stack_a);
-    else
+	else
 	{
-        // rule_5(stack_a, stack_b);
 		stack_b = ft_sort_b(stack_a);
-	//	printf("stack_b completa\n");
-		//print_list(stack_b);
 		stack_a = ft_sort_a(stack_a, &stack_b);
 		i = ft_find_index(*stack_a, ft_find_min(*stack_a));
 		if (i < ft_lstsize(*stack_a) - i)
@@ -39,7 +36,7 @@ void	ft_sort(t_list **stack_a)
 		{
 			while (get_content(*stack_a) != ft_find_min(*stack_a))
 				rev_rot_a(stack_a);
-		}		
+		}
 	}
 }
 
@@ -91,8 +88,8 @@ void	ft_sort_b_till_3(t_list **stack_a, t_list **stack_b)
 {
 	int		i;
 	t_list	*temp;
-//	printf("entrou\n");
 
+	//	printf("entrou\n");
 	while (ft_lstsize(*stack_a) > 3 && ft_checksorted(*stack_a) == 0)
 	{
 		temp = *stack_a;
@@ -123,24 +120,25 @@ t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b)
 	{
 		temp = *stack_b;
 		i = ft_rotate_type_ba(*stack_a, *stack_b);
-	//	printf("i agira vale:%d\n", i);
 		while (i >= 0)
 		{
 			if (i == ft_case_rarb_a(*stack_a, *stack_b, get_content(temp)))
 				i = ft_apply_rarb(stack_a, stack_b, get_content(temp), 'b');
-			else if (i == ft_case_rarrb_a(*stack_a, *stack_b, get_content(temp)))
+			else if (i == ft_case_rarrb_a(*stack_a, *stack_b,
+					get_content(temp)))
 				i = ft_apply_rarrb(stack_a, stack_b, get_content(temp), 'b');
-			else if (i == ft_case_rrarrb_a(*stack_a, *stack_b, get_content(temp)))
+			else if (i == ft_case_rrarrb_a(*stack_a, *stack_b,
+					get_content(temp)))
 				i = ft_apply_rrarrb(stack_a, stack_b, get_content(temp), 'b');
-			else if (i == ft_case_rrarb_a(*stack_a, *stack_b, get_content(temp)))
+			else if (i == ft_case_rrarb_a(*stack_a, *stack_b,
+					get_content(temp)))
 				i = ft_apply_rrarb(stack_a, stack_b, get_content(temp), 'b');
 			else
 				temp = temp->next;
 		}
 	}
-	return(stack_a);
+	return (stack_a);
 }
-
 
 // void	rule_5(t_list **a, t_list **b)
 // {
@@ -151,7 +149,7 @@ t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b)
 // }
 
 // void	sort_a(t_list **a, t_list **b)
-// {	
+// {
 // 	int		temp_b;
 // 	t_list	*temp_a;
 // 	double	size_a;
@@ -200,7 +198,7 @@ t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b)
 // 			if (size_a - qts_maiores <= (size_a) / 2)
 // 			{
 // 				if (size_a - qts_maiores == (size_a) / 2 && signal == 0)
-// 				{	
+// 				{
 // 					swap_a(a);
 // 					signal = 1;
 // 				}
