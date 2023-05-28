@@ -6,7 +6,11 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:59:13 by pde-souz          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/05/25 10:04:44 by pde-souz         ###   ########.fr       */
+=======
+/*   Updated: 2023/05/28 09:55:12 by pde-souz         ###   ########.fr       */
+>>>>>>> 126ce38 (feat:valgrind)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +42,10 @@ int	ft_check_error(char *argv, t_list *temp)
 	len = ft_strlen(argv);
 	if (ft_strncmp(s1, s2, len) != 0)
 	{
+		free(s2);
 		return (1);
 	}
+	free(s2);
 	return (0);
 }
 
