@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:41:59 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/24 15:58:23 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/05/28 11:04:39 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	int		i;
 
 	a = NULL;
-	if (argc < 2)
+	if (argc < 2 || argv[1][0] == '\0')
 		ft_error();
 	i = 1;
 	while (i < argc)
