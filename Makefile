@@ -7,7 +7,7 @@ OBJS = $(SRCS:.c=.o)
 
 LIBFTA = ./libft/libft.a
 
-FLAGS =
+FLAGS = -Wall -Wextra -Werror
 
 %.o: %.c
 	cc $(FLAGS) -c $< -o $@
@@ -44,7 +44,7 @@ fclean: clean
 re: fclean all
 
 valgrind: clean fclean all
-	valgrind --leak-check=full ./push_swap 6 5 4 3 2 1 7
+	valgrind --leak-check=full ./push_swap 6 5 4 3 2 1 7 0 29 10
 	rm -f $(OBJS) $(NAME)
 
 test_ex:
