@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 11:26:37 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 18:43:00 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 22:06:55 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_find_place_b(t_list *b, int nbr)
 	i = 1;
 	if (nbr > get_content(b) && nbr < get_content(ft_lstlast(b)))
 		i = 0;
-	else if (nbr > ft_find_max(b) || nbr < ft_find_min(b))
-		i = ft_find_index(b, ft_find_max(b));
+	else if (nbr > ft_find_bigger(b) || nbr < ft_find_smaller(b))
+		i = ft_find_index(b, ft_find_bigger(b));
 	else
 	{
 		temp = b->next;
@@ -35,7 +35,7 @@ int	ft_find_place_b(t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_find_max(t_list *lst)
+int	ft_find_bigger(t_list *lst)
 {
 	int	i;
 
@@ -49,7 +49,7 @@ int	ft_find_max(t_list *lst)
 	return (i);
 }
 
-int	ft_find_min(t_list *lst)
+int	ft_find_smaller(t_list *lst)
 {
 	int	i;
 
@@ -84,8 +84,8 @@ int	ft_find_place_a(t_list *a, int nbr)
 	i = 1;
 	if (nbr < get_content(a) && nbr > get_content(ft_lstlast(a)))
 		i = 0;
-	else if (nbr > ft_find_max(a) || nbr < ft_find_min(a))
-		i = ft_find_index(a, ft_find_min(a));
+	else if (nbr > ft_find_bigger(a) || nbr < ft_find_smaller(a))
+		i = ft_find_index(a, ft_find_smaller(a));
 	else
 	{
 		temp = a->next;

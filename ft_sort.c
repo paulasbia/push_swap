@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 21:24:40 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 22:05:05 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ void	ft_sort_list(t_list **lst_a)
 	{
 		lst_b = ft_sort_b(lst_a);
 		lst_a = ft_sort_a(lst_a, &lst_b);
-		i = ft_find_index(*lst_a, ft_find_min(*lst_a));
+		i = ft_find_index(*lst_a, ft_find_smaller(*lst_a));
 		if (i < ft_lstsize(*lst_a) - i)
 		{
-			while (get_content(*lst_a) != ft_find_min(*lst_a))
+			while (get_content(*lst_a) != ft_find_smaller(*lst_a))
 				rotate_a(lst_a);
 		}
 		else
 		{
-			while (get_content(*lst_a) != ft_find_min(*lst_a))
+			while (get_content(*lst_a) != ft_find_smaller(*lst_a))
 				rev_rot_a(lst_a);
 		}
 	}

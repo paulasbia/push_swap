@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 21:24:10 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 22:04:32 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ t_list	*ft_sort_b(t_list **lst_a);
 void	ft_sort_b_3(t_list **lst_a, t_list **lst_b);
 int		ft_rotate_type_ab(t_list *a, t_list *b);
 int		ft_find_place_b(t_list *a, int nbr);
-int		ft_find_max(t_list *lst);
-int		ft_find_min(t_list *lst);
+int		ft_find_bigger(t_list *lst);
+int		ft_find_smaller(t_list *lst);
 int		ft_find_index(t_list *lst, int nbr);
 
 /* --- Functions case and do list_b--- */
