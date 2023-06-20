@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:33:26 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/28 10:43:00 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:21:44 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ int	ft_rotate_type_ab(t_list *a, t_list *b)
 	t_list	*temp;
 
 	temp = a;
-	i = ft_case_rrarrb(a, b, get_content(a));
+	i = ft_rev_rot(a, b, get_content(a));
 	while (temp != 0)
 	{
-		if (i > ft_case_rarb(a, b, get_content(temp)))
-			i = ft_case_rarb(a, b, get_content(temp));
-		if (i > ft_case_rrarrb(a, b, get_content(temp)))
-			i = ft_case_rrarrb(a, b, get_content(temp));
-		if (i > ft_case_rarrb(a, b, get_content(temp)))
-			i = ft_case_rarrb(a, b, get_content(temp));
-		if (i > ft_case_rrarb(a, b, get_content(temp)))
-			i = ft_case_rrarb(a, b, get_content(temp));
+		if (i > ft_rotate(a, b, get_content(temp)))
+			i = ft_rotate(a, b, get_content(temp));
+		if (i > ft_rev_rot(a, b, get_content(temp)))
+			i = ft_rev_rot(a, b, get_content(temp));
+		if (i > ft_rarrb(a, b, get_content(temp)))
+			i = ft_rarrb(a, b, get_content(temp));
+		if (i > ft_rrarb(a, b, get_content(temp)))
+			i = ft_rrarb(a, b, get_content(temp));
 		temp = temp->next;
 	}
 	return (i);
@@ -40,17 +40,17 @@ int	ft_rotate_type_ba(t_list *a, t_list *b)
 	t_list	*temp;
 
 	temp = b;
-	i = ft_case_rrarrb_a(a, b, get_content(b));
+	i = ft_rev_rot_a(a, b, get_content(b));
 	while (temp != 0)
 	{
-		if (i > ft_case_rarb_a(a, b, get_content(temp)))
-			i = ft_case_rarb_a(a, b, get_content(temp));
-		if (i > ft_case_rrarrb_a(a, b, get_content(temp)))
-			i = ft_case_rrarrb_a(a, b, get_content(temp));
-		if (i > ft_case_rarrb_a(a, b, get_content(temp)))
-			i = ft_case_rarrb_a(a, b, get_content(temp));
-		if (i > ft_case_rrarb_a(a, b, get_content(temp)))
-			i = ft_case_rrarb_a(a, b, get_content(temp));
+		if (i > ft_rotate_a(a, b, get_content(temp)))
+			i = ft_rotate_a(a, b, get_content(temp));
+		if (i > ft_rev_rot_a(a, b, get_content(temp)))
+			i = ft_rev_rot_a(a, b, get_content(temp));
+		if (i > ft_rarrb_a(a, b, get_content(temp)))
+			i = ft_rarrb_a(a, b, get_content(temp));
+		if (i > ft_rrarb_a(a, b, get_content(temp)))
+			i = ft_rrarb_a(a, b, get_content(temp));
 		temp = temp->next;
 	}
 	return (i);

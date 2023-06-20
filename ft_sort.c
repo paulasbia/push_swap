@@ -6,13 +6,13 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/28 10:43:46 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:17:57 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort(t_list **stack_a)
+void	ft_sort_list(t_list **stack_a)
 {
 	t_list	*stack_b;
 	int		i;
@@ -70,38 +70,41 @@ void	rule_3(t_list **a)
 t_list	*ft_sort_b(t_list **stack_a)
 {
 	t_list	*stack_b;
+	int		sorted_a;
 
 	stack_b = NULL;
-	if (ft_lstsize(*stack_a) > 3 && ft_checksorted(*stack_a) == 0)
+	sorted_a = ft_sorted(*stack_a);
+	if (ft_lstsize(*stack_a) > 3 && sorted_a == 0)
 		push_b(&stack_b, stack_a);
-	if (ft_lstsize(*stack_a) > 3 && ft_checksorted(*stack_a) == 0)
+	if (ft_lstsize(*stack_a) > 3 && sorted_a == 0)
 		push_b(&stack_b, stack_a);
-	if (ft_lstsize(*stack_a) > 3 && ft_checksorted(*stack_a) == 0)
-		ft_sort_b_till_3(stack_a, &stack_b);
-	if (ft_checksorted(*stack_a) == 0)
+	if (ft_lstsize(*stack_a) > 3 && sorted_a == 0)
+		ft_sort_b_3(stack_a, &stack_b);
+	if (sorted_a == 0)
 		rule_3(stack_a);
 	return (stack_b);
 }
 
-// This function sort and push stacks until 3 members left behind.
-void	ft_sort_b_till_3(t_list **stack_a, t_list **stack_b)
+void	ft_sort_b_3(t_list **stack_a, t_list **stack_b)
 {
 	int		i;
+	int		sorted_a;
 	t_list	*temp;
 
-	while (ft_lstsize(*stack_a) > 3 && ft_checksorted(*stack_a) == 0)
+	sorted_a = ft_sorted(*stack_a);
+	while (ft_lstsize(*stack_a) > 3 && sorted_a == 0)
 	{
 		temp = *stack_a;
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb(*stack_a, *stack_b, get_content(temp)))
-				i = ft_apply_rarb(stack_a, stack_b, get_content(temp), 'a');
-			else if (i == ft_case_rrarrb(*stack_a, *stack_b, get_content(temp)))
-				i = ft_apply_rrarrb(stack_a, stack_b, get_content(temp), 'a');
-			else if (i == ft_case_rarrb(*stack_a, *stack_b, get_content(temp)))
+			if (i == ft_rotate(*stack_a, *stack_b, get_content(temp)))
+				i = ft_apply_rotate(stack_a, stack_b, get_content(temp), 'a');
+			else if (i == ft_rev_rot(*stack_a, *stack_b, get_content(temp)))
+				i = ft_apply_rev_rot(stack_a, stack_b, get_content(temp), 'a');
+			else if (i == ft_rarrb(*stack_a, *stack_b, get_content(temp)))
 				i = ft_apply_rarrb(stack_a, stack_b, get_content(temp), 'a');
-			else if (i == ft_case_rrarb(*stack_a, *stack_b, get_content(temp)))
+			else if (i == ft_rrarb(*stack_a, *stack_b, get_content(temp)))
 				i = ft_apply_rrarb(stack_a, stack_b, get_content(temp), 'a');
 			else
 				temp = temp->next;
@@ -120,15 +123,15 @@ t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b)
 		i = ft_rotate_type_ba(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb_a(*stack_a, *stack_b, get_content(temp)))
-				i = ft_apply_rarb(stack_a, stack_b, get_content(temp), 'b');
-			else if (i == ft_case_rarrb_a(*stack_a, *stack_b,
+			if (i == ft_rotate_a(*stack_a, *stack_b, get_content(temp)))
+				i = ft_apply_rotate(stack_a, stack_b, get_content(temp), 'b');
+			else if (i == ft_rarrb_a(*stack_a, *stack_b,
 					get_content(temp)))
 				i = ft_apply_rarrb(stack_a, stack_b, get_content(temp), 'b');
-			else if (i == ft_case_rrarrb_a(*stack_a, *stack_b,
+			else if (i == ft_rev_rot_a(*stack_a, *stack_b,
 					get_content(temp)))
-				i = ft_apply_rrarrb(stack_a, stack_b, get_content(temp), 'b');
-			else if (i == ft_case_rrarb_a(*stack_a, *stack_b,
+				i = ft_apply_rev_rot(stack_a, stack_b, get_content(temp), 'b');
+			else if (i == ft_rrarb_a(*stack_a, *stack_b,
 					get_content(temp)))
 				i = ft_apply_rrarb(stack_a, stack_b, get_content(temp), 'b');
 			else

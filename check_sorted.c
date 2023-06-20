@@ -6,14 +6,13 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 09:40:41 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/24 15:58:57 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 17:54:40 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// This function checks if the stack is sorted.
-int	ft_checksorted(t_list *stack_a)
+int	ft_sorted(t_list *stack_a)
 {
 	int	i;
 

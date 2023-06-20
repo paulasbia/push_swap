@@ -6,13 +6,13 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 11:22:03 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 15:20:42 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:16:32 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_case_rrarrb(t_list *a, t_list *b, int nbr)
+int	ft_rev_rot(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	place_b;
@@ -28,7 +28,7 @@ int	ft_case_rrarrb(t_list *a, t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_case_rarb(t_list *a, t_list *b, int nbr)
+int	ft_rotate(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	index;
@@ -40,7 +40,7 @@ int	ft_case_rarb(t_list *a, t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_case_rarrb(t_list *a, t_list *b, int nbr)
+int	ft_rarrb(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	place_b;
@@ -53,7 +53,7 @@ int	ft_case_rarrb(t_list *a, t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_case_rrarb(t_list *a, t_list *b, int nbr)
+int	ft_rrarb(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	index;
