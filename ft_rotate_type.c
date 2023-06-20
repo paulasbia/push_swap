@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:33:26 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 18:21:44 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 21:23:18 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	ft_rotate_type_ab(t_list *a, t_list *b)
 			i = ft_rotate(a, b, get_content(temp));
 		if (i > ft_rev_rot(a, b, get_content(temp)))
 			i = ft_rev_rot(a, b, get_content(temp));
-		if (i > ft_rarrb(a, b, get_content(temp)))
-			i = ft_rarrb(a, b, get_content(temp));
-		if (i > ft_rrarb(a, b, get_content(temp)))
-			i = ft_rrarb(a, b, get_content(temp));
+		if (i > ft_ra_rrb(a, b, get_content(temp)))
+			i = ft_ra_rrb(a, b, get_content(temp));
+		if (i > ft_rra_rb(a, b, get_content(temp)))
+			i = ft_rra_rb(a, b, get_content(temp));
 		temp = temp->next;
 	}
 	return (i);
@@ -47,10 +47,10 @@ int	ft_rotate_type_ba(t_list *a, t_list *b)
 			i = ft_rotate_a(a, b, get_content(temp));
 		if (i > ft_rev_rot_a(a, b, get_content(temp)))
 			i = ft_rev_rot_a(a, b, get_content(temp));
-		if (i > ft_rarrb_a(a, b, get_content(temp)))
-			i = ft_rarrb_a(a, b, get_content(temp));
-		if (i > ft_rrarb_a(a, b, get_content(temp)))
-			i = ft_rrarb_a(a, b, get_content(temp));
+		if (i > ft_ra_rrb_a(a, b, get_content(temp)))
+			i = ft_ra_rrb_a(a, b, get_content(temp));
+		if (i > ft_rra_rb_a(a, b, get_content(temp)))
+			i = ft_rra_rb_a(a, b, get_content(temp));
 		temp = temp->next;
 	}
 	return (i);

@@ -6,13 +6,13 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 12:58:22 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 18:13:10 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 21:20:44 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_apply_rotate(t_list **a, t_list **b, int nbr, char s)
+int	ft_do_rotate(t_list **a, t_list **b, int nbr, char s)
 {
 	if (s == 'a')
 	{
@@ -37,7 +37,7 @@ int	ft_apply_rotate(t_list **a, t_list **b, int nbr, char s)
 	return (-1);
 }
 
-int	ft_apply_rev_rot(t_list **a, t_list **b, int nbr, char s)
+int	ft_do_rev_rot(t_list **a, t_list **b, int nbr, char s)
 {
 	if (s == 'a')
 	{
@@ -62,7 +62,7 @@ int	ft_apply_rev_rot(t_list **a, t_list **b, int nbr, char s)
 	return (-1);
 }
 
-int	ft_apply_rrarb(t_list **a, t_list **b, int nbr, char s)
+int	ft_do_rra_rb(t_list **a, t_list **b, int nbr, char s)
 {
 	if (s == 'a')
 	{
@@ -83,7 +83,7 @@ int	ft_apply_rrarb(t_list **a, t_list **b, int nbr, char s)
 	return (-1);
 }
 
-int	ft_apply_rarrb(t_list **a, t_list **b, int nbr, char s)
+int	ft_do_ra_rrb(t_list **a, t_list **b, int nbr, char s)
 {
 	if (s == 'a')
 	{

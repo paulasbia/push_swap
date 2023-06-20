@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 18:37:03 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 21:24:40 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,13 @@ void	ft_sort_b_3(t_list **lst_a, t_list **lst_b)
 		while (i >= 0)
 		{
 			if (i == ft_rotate(*lst_a, *lst_b, get_content(temp)))
-				i = ft_apply_rotate(lst_a, lst_b, get_content(temp), 'a');
+				i = ft_do_rotate(lst_a, lst_b, get_content(temp), 'a');
 			else if (i == ft_rev_rot(*lst_a, *lst_b, get_content(temp)))
-				i = ft_apply_rev_rot(lst_a, lst_b, get_content(temp), 'a');
-			else if (i == ft_rarrb(*lst_a, *lst_b, get_content(temp)))
-				i = ft_apply_rarrb(lst_a, lst_b, get_content(temp), 'a');
-			else if (i == ft_rrarb(*lst_a, *lst_b, get_content(temp)))
-				i = ft_apply_rrarb(lst_a, lst_b, get_content(temp), 'a');
+				i = ft_do_rev_rot(lst_a, lst_b, get_content(temp), 'a');
+			else if (i == ft_ra_rrb(*lst_a, *lst_b, get_content(temp)))
+				i = ft_do_ra_rrb(lst_a, lst_b, get_content(temp), 'a');
+			else if (i == ft_rra_rb(*lst_a, *lst_b, get_content(temp)))
+				i = ft_do_rra_rb(lst_a, lst_b, get_content(temp), 'a');
 			else
 				temp = temp->next;
 		}
@@ -124,16 +124,16 @@ t_list	**ft_sort_a(t_list **lst_a, t_list **lst_b)
 		while (i >= 0)
 		{
 			if (i == ft_rotate_a(*lst_a, *lst_b, get_content(temp)))
-				i = ft_apply_rotate(lst_a, lst_b, get_content(temp), 'b');
-			else if (i == ft_rarrb_a(*lst_a, *lst_b,
+				i = ft_do_rotate(lst_a, lst_b, get_content(temp), 'b');
+			else if (i == ft_ra_rrb_a(*lst_a, *lst_b,
 					get_content(temp)))
-				i = ft_apply_rarrb(lst_a, lst_b, get_content(temp), 'b');
+				i = ft_do_ra_rrb(lst_a, lst_b, get_content(temp), 'b');
 			else if (i == ft_rev_rot_a(*lst_a, *lst_b,
 					get_content(temp)))
-				i = ft_apply_rev_rot(lst_a, lst_b, get_content(temp), 'b');
-			else if (i == ft_rrarb_a(*lst_a, *lst_b,
+				i = ft_do_rev_rot(lst_a, lst_b, get_content(temp), 'b');
+			else if (i == ft_rra_rb_a(*lst_a, *lst_b,
 					get_content(temp)))
-				i = ft_apply_rrarb(lst_a, lst_b, get_content(temp), 'b');
+				i = ft_do_rra_rb(lst_a, lst_b, get_content(temp), 'b');
 			else
 				temp = temp->next;
 		}
