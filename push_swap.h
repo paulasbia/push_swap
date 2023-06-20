@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 18:20:32 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:38:43 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ t_list	*ft_remove_front(t_list **list);
 
 void	print_list(t_list *a);
 void	ft_sort_list(t_list **a);
-t_list	*ft_sort_b(t_list **stack_a);
-void	ft_sort_b_3(t_list **stack_a, t_list **stack_b);
+t_list	*ft_sort_b(t_list **lst_a);
+void	ft_sort_b_3(t_list **lst_a, t_list **lst_b);
 int		ft_rotate_type_ab(t_list *a, t_list *b);
 int		ft_find_place_b(t_list *a, int nbr);
 int		ft_find_max(t_list *lst);
@@ -74,7 +74,7 @@ int		ft_apply_rarrb(t_list **a, t_list **b, int nbr, char s);
 
 /* --- Functions case and apply list_a--- */
 
-t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b);
+t_list	**ft_sort_a(t_list **lst_a, t_list **lst_b);
 int		ft_rotate_type_ba(t_list *a, t_list *b);
 
 int		ft_rarrb_a(t_list *a, t_list *b, int nbr);
