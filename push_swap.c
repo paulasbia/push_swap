@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:41:59 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 17:59:02 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/21 13:05:05 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,9 @@ int	main(int argc, char **argv)
 		temp = my_ft_lstnew(argv[i]);
 		if (ft_check_error(argv[i], temp) || ft_duplicate(a, ft_atoi(argv[i])))
 		{
-			ft_error();
 			ft_lstclear(&temp, free);
+			ft_lstclear(&a, free);
+			ft_error();
 		}
 		ft_lstadd_back(&a, temp);
 		i++;
