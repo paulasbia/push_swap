@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:37:36 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 22:05:05 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/21 09:56:47 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	ft_sort_b_3(t_list **lst_a, t_list **lst_b)
 	while (ft_lstsize(*lst_a) > 3 && sorted_a == 0)
 	{
 		temp = *lst_a;
-		i = ft_rotate_type_ab(*lst_a, *lst_b);
+		i = ft_choose_rotate_ab(*lst_a, *lst_b);
 		while (i >= 0)
 		{
 			if (i == ft_rotate(*lst_a, *lst_b, get_content(temp)))
@@ -120,7 +120,7 @@ t_list	**ft_sort_a(t_list **lst_a, t_list **lst_b)
 	while (*lst_b != 0)
 	{
 		temp = *lst_b;
-		i = ft_rotate_type_ba(*lst_a, *lst_b);
+		i = ft_choose_rotate_ba(*lst_a, *lst_b);
 		while (i >= 0)
 		{
 			if (i == ft_rotate_a(*lst_a, *lst_b, get_content(temp)))

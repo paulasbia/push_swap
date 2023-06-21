@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 22:04:32 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/21 09:58:04 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	print_list(t_list *a);
 void	ft_sort_list(t_list **a);
 t_list	*ft_sort_b(t_list **lst_a);
 void	ft_sort_b_3(t_list **lst_a, t_list **lst_b);
-int		ft_rotate_type_ab(t_list *a, t_list *b);
+int		ft_choose_rotate_ab(t_list *a, t_list *b);
 int		ft_find_place_b(t_list *a, int nbr);
 int		ft_find_bigger(t_list *lst);
 int		ft_find_smaller(t_list *lst);
@@ -75,7 +75,7 @@ int		ft_do_ra_rrb(t_list **a, t_list **b, int nbr, char s);
 /* --- Functions case and do list_a--- */
 
 t_list	**ft_sort_a(t_list **lst_a, t_list **lst_b);
-int		ft_rotate_type_ba(t_list *a, t_list *b);
+int		ft_choose_rotate_ba(t_list *a, t_list *b);
 
 int		ft_ra_rrb_a(t_list *a, t_list *b, int nbr);
 int		ft_rra_rb_a(t_list *a, t_list *b, int nbr);
@@ -85,7 +85,5 @@ int		ft_rev_rot_a(t_list *a, t_list *b, int nbr);
 int		ft_find_place_a(t_list *a, int nbr);
 
 void	rule_3(t_list **a);
-//void	rule_5(t_list **a, t_list **b);
-//void	sort_a(t_list **a, t_list **b);
 
 #endif

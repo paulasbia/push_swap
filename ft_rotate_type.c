@@ -6,13 +6,13 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:33:26 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 21:23:18 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/06/21 09:56:19 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_rotate_type_ab(t_list *a, t_list *b)
+int	ft_choose_rotate_ab(t_list *a, t_list *b)
 {
 	int		i;
 	t_list	*temp;
@@ -34,7 +34,7 @@ int	ft_rotate_type_ab(t_list *a, t_list *b)
 	return (i);
 }
 
-int	ft_rotate_type_ba(t_list *a, t_list *b)
+int	ft_choose_rotate_ba(t_list *a, t_list *b)
 {
 	int		i;
 	t_list	*temp;
