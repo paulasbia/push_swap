@@ -6,11 +6,11 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 11:38:06 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/11 13:15:02 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:27:45 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 t_list	*ft_remove_back(t_list **list)
 {

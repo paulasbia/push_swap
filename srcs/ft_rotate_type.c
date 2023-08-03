@@ -6,11 +6,11 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:33:26 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/21 09:56:19 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:27:18 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_choose_rotate_ab(t_list *a, t_list *b)
 {

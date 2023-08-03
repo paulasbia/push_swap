@@ -1,7 +1,7 @@
 NAME = push_swap
 
-SRCS =  push_swap.c ft_error.c check_sorted.c swap.c push.c rotate.c rev_rotate.c ft_sort.c ft_rotate_type.c \
-		cases_utils_ab.c find_utils.c apply_utils.c cases_utils_ba.c 
+SRCS =  ./srcs/push_swap.c ./srcs/ft_error.c ./srcs/check_sorted.c ./srcs/swap.c ./srcs/push.c ./srcs/rotate.c ./srcs/rev_rotate.c \
+		./srcs/ft_sort.c ./srcs/ft_rotate_type.c ./srcs/cases_utils_ab.c ./srcs/find_utils.c ./srcs/apply_utils.c ./srcs/cases_utils_ba.c 
 
 OBJS = $(SRCS:.c=.o)
 

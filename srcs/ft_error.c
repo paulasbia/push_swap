@@ -6,11 +6,11 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:59:13 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/28 10:37:27 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:27:13 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_duplicate(t_list *lst, int n)
 {

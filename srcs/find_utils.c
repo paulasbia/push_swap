@@ -6,11 +6,11 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 11:26:37 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/20 22:06:55 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:27:06 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_find_place_b(t_list *b, int nbr)
 {

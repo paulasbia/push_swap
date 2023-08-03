@@ -6,11 +6,11 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 21:40:54 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/05/11 10:45:59 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:28:00 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	swap(t_list **lst)
 {

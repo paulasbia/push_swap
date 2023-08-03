@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:31:52 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/06/21 09:58:04 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:28:26 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 /* --- Dependencies Libs --- */
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
